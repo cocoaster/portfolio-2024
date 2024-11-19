@@ -1,0 +1,249 @@
+/**********/
+/*Slider*/
+/********/
+
+.slider-container{
+ margin-right: auto;
+ margin-left: auto;
+ max-width: 90%;
+ margin-bottom: 100px !important;
+}
+.custom-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden; /* Empêche le défilement horizontal */
+    height: 550px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+
+}
+
+.slider-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Empêche le débordement */
+}
+
+.slider-text{
+    padding: 20px;
+}
+
+.custom-slider .slider-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Empêche l'apparition de la barre de défilement */
+}
+
+
+.custom-slider .slider-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/**********/
+/*Button*/
+/*********/
+
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #12632D;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #12632DDB;
+    color: #fff;
+    transform: scale(1.05); 
+    font-weight: 500;
+    transition-delay: 0.8s;
+}
+
+/********************************/
+/* Slider Items and Structure */
+/*******************************/
+
+.custom-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    height: 530px !important;
+}
+
+.slider-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.slider-text {
+    max-width: 50%;
+}
+
+.slider-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*********************************************/
+/* Animation de zoom et fondu pour l'image */
+/********************************************/
+
+@keyframes zoomFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8); /* Taille normale au début */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Grossit un peu (par exemple à 110%) */
+    }
+}
+
+.zoom-fade-image {
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transform: scale(1); /* Commence avec la taille normale */
+    transition: opacity 2s ease, transform 2s ease;
+    animation-fill-mode: forwards; /* Garde l'état final de l'animation */
+}
+
+/*****************************************************************/
+/* Animation de fondu pour les textes (titre, contenu, bouton) */
+/****************************************************************/
+
+.fade-in-text {
+    opacity: 0;
+    transition: opacity 1.5s ease; /* Animation de fondu sur 1.5 seconde */
+}
+
+.fade-in-text.show {
+    opacity: 1;
+}
+
+/* Ajoute des délais différents pour chaque type d'élément */
+.fade-in-text h2 {
+    transition-delay: 0s; /* Titre */
+}
+
+.fade-in-text p {
+    transition-delay: 0.8s; /* Contenu */
+}
+
+.fade-in-text a {
+    transition-delay: 1.2s; /* Bouton */
+}
+
+
+/* Médias queries pour les petits écrans et les mobiles (moins de 768px) */
+@media (max-width: 767px) {
+    .slider-container{
+        width: 100%;
+        height: auto;
+    }
+    .custom-slider {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column !important;
+            height: 650px !important;
+    }
+
+    .slider-item {
+        
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        padding-top: 50px;
+        padding-bottom: 30px;
+        text-align: center; /* Centre les textes */
+        background-color: #f5f5f5;
+    }
+
+    .slider-image {
+        order: 1; /* L'image apparaît en premier */
+        width: 100%;
+        margin-bottom: 15px; /* Espacement en dessous de l'image */
+    }
+
+    .slider-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour l'effet élégant */
+    }
+
+    .slider-text {
+        overflow: hidden;
+        order: 2; /* Le texte apparaît après l'image */
+        width: 100% !important;
+        padding: 15px 0px !important; /* Un peu de padding autour du texte */
+    }
+
+    .custom-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #12632D;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+        width: 80%; /* Assure que le bouton prend une bonne place */
+        margin: 15px auto; /* Centre le bouton sous le texte */
+        font-size: 16px;
+    }
+
+    .custom-button:hover {
+        background-color: #005177;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    
+
+    .slider-text {
+        padding: 10px 0; 
+        font-size: 14px; 
+    }
+
+    .slider-image {
+        width: 100%; /* Assure que l'image occupe toute la largeur disponible */
+        margin-bottom: 10px; /* Espace entre l'image et le texte */
+    }
+
+    .custom-button {
+        width: 90%; 
+        font-size: 14px;
+    }
+}

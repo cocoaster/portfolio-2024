@@ -1,0 +1,52 @@
+*, body {
+    overflow-x: hidden;
+}
+
+.wpforms-container .wpforms-field {
+    max-width: 90% !important;
+}
+
+.wpform {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+.wpform {
+    overlow: hidden;
+}
+}
+
+
+.wpforms-container input.wpforms-field-medium, 
+.wpforms-container select.wpforms-field-medium, 
+.wpforms-container .wpforms-field-row.wpforms-field-medium, 
+.wp-core-ui div.wpforms-container input.wpforms-field-medium, 
+.wp-core-ui div.wpforms-container select.wpforms-field-medium, 
+.wp-core-ui div.wpforms-container .wpforms-field-row.wpforms-field-medium {
+    min-width: 100% !important;
+}
+
+button{
+    background-color:#12632D !important;
+}
+
+/**************************************/
+/* Animation d'apparition des pages'*/
+/*************************************/
+
+/* Style pour le fade-in-up */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(200px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
